@@ -1,6 +1,5 @@
 ﻿using AdsetIntegrator.Domain.Entities;
 using System.Data.Entity;
-using System.Linq;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using AdsetIntegrator.Infra.Data.EntityConfig;
 
@@ -15,6 +14,7 @@ namespace AdsetIntegrator.Infra.Data.Contexto
 
         public DbSet<Veiculo> Veiculo { get; set;}
         public DbSet<ItemDeSerie> ItensDeSerie { get; set;}
+        public DbSet<VeiculoItem> VeiculoItems { get; set;}
 
        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -26,6 +26,7 @@ namespace AdsetIntegrator.Infra.Data.Contexto
                  .Configure(a => a.IsKey());
             modelBuilder.Configurations.Add(new VeiculoConfiguration());
             modelBuilder.Configurations.Add(new ItemDeSerieConfiguration());
+            modelBuilder.Configurations.Add(new VeiculoItemConfiguration());
         }
 
          public override int SaveChanges()

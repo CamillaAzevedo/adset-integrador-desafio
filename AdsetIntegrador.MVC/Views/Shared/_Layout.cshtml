@@ -3,34 +3,96 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AdsetIntegrador.MVC</title>
+    <title>@ViewData["Title"] - AdsetIntegrador</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AdsetIntegrador.MVC.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header class="d-flex flex-wrap justify-content-center py-3 px-4  border-bottom ">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                    <img src="images/Logo.svg" alt="" srcset="">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="./images/Logo.svg" alt="" srcset="">
+        </a>
+        <div id="btnSwitch" class="form-check form-switch d-flex  " data-checked="false">
+            <div class="btn-group align-items-center btn-group-lg  " role="group" aria-label="Basic example">
+                <label class="form-check-label btn order-0" for="flexSwitchCheckDefault">
+                    <i class="bi bi-brightness-high"></i>
+                </label>
+                <input class="form-check-input btn order-1 m-0 rounded-5 border-2 border-primary  " type="checkbox"
+                        role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label btn order-2 " for="flexSwitchCheckDefault">
+                    <i class="bi bi-moon-fill"></i>
+                </label>
             </div>
-        </nav>
+        </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="container-fluid p-0">
+        <div class="w-100 pt-2 pb-5 " style=" background-color: var(--bs-gray-200);">
+            <div class="container">
+                <div class="row justify-content-between align-items-center mb-5 ">
+                    <div id=" btn-group-header"
+                            class="btn-group btn-group-lg col-12 col-sm-6 col-lg-6 col-xxl-5 row-cols-4 justify-content-center "
+                            role="group" aria-label="Large button group">
+                        <a class="btn d-flex flex-grow-0 flex-lg-grow-1  px-2 bar-separator">
+                            <div class="wrap-content flex-column align-items-center  pe-4">
+                                <div class="main-text text-secondary   "> 100 veículos </div>
+                                <div class="fs-6 text-primary ">texto small</div>
+                            </div>
+                        </a>
+                        <a class="btn d-flex flex-grow-0 flex-lg-grow-1   px-2 bar-separator pr-2 ">
+                            <div class="wrap-content flex-column align-items-center  pe-4">
+                                <div class="main-text text-secondary   "> 100 veículos </div>
+                                <div class="fs-6 text-success ">texto small</div>
+
+                            </div>
+                        </a>
+                        <a class="btn d-flex flex-grow-0 flex-lg-grow-1   px-2">
+                            <div class="wrap-content flex-column align-items-center ">
+                                <div class="main-text text-secondary   "> 100 veículos </div>
+                                <div class="fs-6 text-danger ">texto small</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12  col-lg-6 col-xxl d-flex justify-content-center  justify-content-lg-between ">
+                        <div class="col d-flex align-content-center flex-grow-0 border-start ps-lg-3 ">
+                            <a class="btn d-flex flex-column justify-content-center px-2">
+                                <div class="wrap-content flex-column align-items-center  ">
+                                    <span class=" main-text text-secondary text-nowrap"> Exportar Estoque </span>
+                                    <img class="col-4" src="images/btn-exportar-estoque.svg" alt="" srcset="">
+                                </div>
+                            </a>
+                            <a class="btn d-flex flex-column align-items-center px-2" data-bs-container="body"
+                                data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Cadastrar veíuculo"
+                               data-bs-trigger="hover focus" data-bs-custom-class="custom-popover" href="Veiculo/Create">
+                                <div class="wrap-content flex-column align-items-center ps-lg-4 ">
+                                    <img src="images/cadastrar-carro.svg" alt="" srcset="">
+                                </div>
+                            </a>
+                        </div>
+                        <a name="" id="" class="btn d-flex flex-nowrap align-items-center  " href="#" role="button">
+                            <img class="p-2 rounded-circle rounded-icon-btn" src="images/globo.svg"
+                                    style="background: var(--bs-primary);" lt="" srcset="">
+                            <div type="button" class="btn btn-lg border-0 text-white ps-4" style="background: var(--bs-primary);">
+                                <span>Atualizar</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - AdsetIntegrador.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - AdsetIntegrador - <a asp-area="" asp-controller="Veiculo" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,23 +1,23 @@
 ﻿namespace AdsetIntegrator.Infra.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using AdsetIntegrator.Domain.Entities;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AdsetIntegrator.Infra.Data.Contexto.AdsIntegratorContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Contexto.AdsIntegratorContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(AdsetIntegrator.Infra.Data.Contexto.AdsIntegratorContext context)
+        protected override void Seed(Contexto.AdsIntegratorContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            context.ItensDeSerie.AddOrUpdate(
+                new ItemDeSerie() { Nome = "Banco de Couro" },
+                new ItemDeSerie() { Nome = "Vidro elétrico" },
+                new ItemDeSerie() { Nome = "Central Multimídia" }
+            );
+            context.SaveChanges();
         }
     }
 }

@@ -16,9 +16,7 @@ namespace AdsetIntegrator.Infra.Data.EntityConfig
 
             Property(i => i.Nome)
                 .HasMaxLength(150);
-            HasRequired(i => i.Veiculo)
-                .WithMany()
-                .HasForeignKey(i => i.VeiculoId);
+
         }
     }
 }
