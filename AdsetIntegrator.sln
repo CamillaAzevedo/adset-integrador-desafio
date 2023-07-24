@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{B7E92048-C5A8-418D-BE19-DFA879C8EEE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{E27A8FF1-7ED5-45D5-ACFA-7CE904C60119}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{EDCD1870-AFEA-4ADF-BBDB-8E0E2A0FC60E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsetIntegrator.Domain", "AdsetIntegrator.Domain\AdsetIntegrator.Domain.csproj", "{F46D3E38-C8F5-4586-81D5-393858AC845B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsetIntegrator.Infra.Data", "AdsetIntegrator.Infra.Data\AdsetIntegrator.Infra.Data.csproj", "{E6AFB952-EADF-4875-8978-134515C9CA8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{865A8A45-0C41-4E85-86DA-ACDBDD12E800}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsetIntegrator.Application", "AdsetIntegrator.Application\AdsetIntegrator.Application.csproj", "{165F18EA-7E54-4285-8109-133961B1BE76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{B13CFCEE-8264-4F37-B23E-BB12490DB59E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsetIntegrador.MVC", "AdsetIntegrador.MVC\AdsetIntegrador.MVC.csproj", "{960C3851-8E7A-4D04-BE9A-F01639558672}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F46D3E38-C8F5-4586-81D5-393858AC845B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46D3E38-C8F5-4586-81D5-393858AC845B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46D3E38-C8F5-4586-81D5-393858AC845B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46D3E38-C8F5-4586-81D5-393858AC845B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6AFB952-EADF-4875-8978-134515C9CA8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6AFB952-EADF-4875-8978-134515C9CA8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6AFB952-EADF-4875-8978-134515C9CA8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6AFB952-EADF-4875-8978-134515C9CA8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165F18EA-7E54-4285-8109-133961B1BE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165F18EA-7E54-4285-8109-133961B1BE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165F18EA-7E54-4285-8109-133961B1BE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165F18EA-7E54-4285-8109-133961B1BE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960C3851-8E7A-4D04-BE9A-F01639558672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960C3851-8E7A-4D04-BE9A-F01639558672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960C3851-8E7A-4D04-BE9A-F01639558672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960C3851-8E7A-4D04-BE9A-F01639558672}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EDCD1870-AFEA-4ADF-BBDB-8E0E2A0FC60E} = {E27A8FF1-7ED5-45D5-ACFA-7CE904C60119}
+		{F46D3E38-C8F5-4586-81D5-393858AC845B} = {B7E92048-C5A8-418D-BE19-DFA879C8EEE4}
+		{E6AFB952-EADF-4875-8978-134515C9CA8E} = {EDCD1870-AFEA-4ADF-BBDB-8E0E2A0FC60E}
+		{165F18EA-7E54-4285-8109-133961B1BE76} = {865A8A45-0C41-4E85-86DA-ACDBDD12E800}
+		{960C3851-8E7A-4D04-BE9A-F01639558672} = {B13CFCEE-8264-4F37-B23E-BB12490DB59E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {206CBB3D-2F3B-4981-B2D3-ED3BB07C8989}
+	EndGlobalSection
+EndGlobal

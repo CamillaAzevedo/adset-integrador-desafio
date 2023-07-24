@@ -1,0 +1,85 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+    background-color: var(--bs-gray-200);
+}
+
+body {
+  margin-bottom: 60px;
+}
+:root {
+    --bs-primary: #F29400;
+}
+
+
+.custom-popover {
+    background: var(--bs-gray-800);
+    color: #fff;
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+    --bs-popover-body-color: #fff;
+}
+
+.bar-separator .wrap-content {
+    border-right-color: var(--bs-gray-400);
+    border-right-width: 1px;
+    border-right-style: solid;
+    transform: skew(-30deg);
+}
+
+    .bar-separator .wrap-content > * {
+        transform: skew(30deg);
+    }
+
+.rounded-icon-btn {
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-right: -1.5rem;
+    z-index: 1;
+    position: relative;
+}
+
+#search-colapse.show + div > button {
+    visibility: visible !important;
+    transform: translate(0) !important;
+    transition: .2s linear;
+}
+
+#table-recue {
+    margin-top: -95px;
+}
+
+#btn-group-edit-car button#edit-car img {
+    filter: brightness(0) invert(1);
+}
+
+#info-car .right-btns {
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+#list-cars .bottom-btns {
+    position: absolute;
+    bottom: 0px;
+    transform: translateY(65%);
+}
+
+#list-cars tbody tr {
+}
+
+#list-opcionais {
+    max-height: 400px;
+}
