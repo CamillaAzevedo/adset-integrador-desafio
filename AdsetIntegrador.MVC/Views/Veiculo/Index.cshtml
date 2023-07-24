@@ -7,9 +7,53 @@
 <div class="container-fluid p-0">
     <div class="w-100 pb-5 " style=" background-color: var(--bs-gray-200);">
         <div class="container">
-            
+            <div class="row justify-content-between align-items-center">
+                <div id="btn-group-header" class="btn-group btn-group-lg col-12 col-sm-6 col-lg-6 col-xxl-5 row-cols-4 justify-content-center " role="group" aria-label="Large button group">
+                    <a class="btn d-flex flex-grow-0 flex-lg-grow-1  px-2 bar-separator">
+                        <div class="wrap-content flex-column align-items-center  pe-4">
+                            <div class="main-text text-secondary   "> 100 veículos </div>
+                            <div class="fs-6 text-primary ">Total</div>
+                        </div>
+                    </a>
+                    <a class="btn d-flex flex-grow-0 flex-lg-grow-1   px-2 bar-separator pr-2 ">
+                        <div class="wrap-content flex-column align-items-center  pe-4">
+                            <div class="main-text text-secondary   "> 100 veículos </div>
+                            <div class="fs-6 text-success ">Com foto</div>
+                        </div>
+                    </a>
+                    <a class="btn d-flex flex-grow-0 flex-lg-grow-1   px-2">
+                        <div class="wrap-content flex-column align-items-center ">
+                            <div class="main-text text-secondary   "> 100 veículos </div>
+                            <div class="fs-6 text-danger ">Sem foto</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12  col-lg-6 col-xxl d-flex justify-content-center  justify-content-lg-between ">
+                    <div class="col d-flex align-content-center flex-grow-0 border-start ps-lg-3 ">
+                        <a class="btn d-flex flex-column justify-content-center px-2">
+                            <div class="wrap-content flex-column align-items-center  ">
+                                <span class=" main-text text-secondary text-nowrap"> Exportar Estoque </span>
+                                <img class="col-4" src="images/btn-exportar-estoque.svg" alt="" srcset="">
+                            </div>
+                        </a>
+                        <a class="btn d-flex flex-column align-items-center px-2" data-bs-container="body"
+                           data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Cadastrar veículo"
+                           data-bs-trigger="hover focus" data-bs-custom-class="custom-popover" role="button" href="Veiculo/Create">
+                            <div class="wrap-content flex-column align-items-center ps-lg-4 ">
+                                <img src="images/cadastrar-carro.svg" alt="" srcset="">
+                            </div>
+                        </a>
+                    </div>
+                    <a name="" id="" class="btn d-flex flex-nowrap align-items-center  " href="#" role="button">
+                        <img class="p-2 rounded-circle rounded-icon-btn" src="images/globo.svg"
+                             style="background: var(--bs-primary);" lt="" srcset="">
+                        <div type="button" class="btn btn-lg border-0 text-white ps-4" style="background: var(--bs-primary);">
+                            <span>Atualizar</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
             <div class="row justify-content-center align-items-center g-2 border-top mt-2 mb-5">
-                <!-- <div class="collapse mt-0" id="search-colapse"> -->
                 <div class=" collapse mt-0 position-relative z-1 " id="search-colapse">
                     <div class="card card-body rounded-top-0 border-0 rounded-bottom-4 ">
                         <div class="container">
@@ -138,107 +182,104 @@
             </div>
         </div>
     </div>
-<div class="container">
-    <div id="table-recue" class="row">
-        <div class="table-responsive">
-            <table id="list-cars" class="table text-secondary  ">
-                <thead class="bg-transparent">
-                    <tr>
-                        <th colspan="3" scope="col" class="bg-transparent">
-                            <div class="d-flex justify-content-between ">
-                                <div class="btn-group rounded-0 align-items-center" role="group">
-                                    <button type="button" class="btn d-flex align-items-center bg-success pe-3 text-white rounded-0"
-                                            style="-webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);">
-                                        <svg class="me-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#fff" />
-                                            <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#fff" />
-                                        </svg>
-                                        <i class="bi bi-eraser-fill btn rounded-circle bg-white bg-opacity-50  text-danger py-1 px-2"></i>
-                                    </button>
-                                    <button type="button" class="btn border-end ">
-                                        Marca/modelo
-                                        <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
-                                            <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
-                                        </svg>
-                                    </button>
-                                    <button type="button" class="btn border-end ">
-                                        Ano
-                                        <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
-                                            <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
-                                        </svg>
-                                    </button>
-                                    <button type="button" class="btn border-end ">
-                                        Preço
-                                        <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
-                                            <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
-                                        </svg>
-                                    </button>
-                                    <button type="button" class="btn border-end ">
-                                        Fotos
-                                        <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
-                                            <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
-                                        </svg>
-                                    </button>
+    <div class="container">
+        <div id="table-recue" class="row">
+            <div class="table-responsive">
+                <table id="list-cars" class="table text-secondary  ">
+                    <thead class="bg-transparent">
+                        <tr>
+                            <th colspan="3" scope="col" class="bg-transparent">
+                                <div class="d-flex justify-content-between ">
+                                    <div class="btn-group rounded-0 align-items-center" role="group">
+                                        <button type="button" class="btn d-flex align-items-center bg-success pe-3 text-white rounded-0"
+                                                style="-webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);">
+                                            <svg class="me-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#fff" />
+                                                <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#fff" />
+                                            </svg>
+                                            <i class="bi bi-eraser-fill btn rounded-circle bg-white bg-opacity-50  text-danger py-1 px-2"></i>
+                                        </button>
+                                        <button type="button" class="btn border-end ">
+                                            Marca/modelo
+                                            <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
+                                                <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="btn border-end ">
+                                            Ano
+                                            <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
+                                                <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="btn border-end ">
+                                            Preço
+                                            <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
+                                                <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="btn border-end ">
+                                            Fotos
+                                            <svg class="ms-2" width="11" height="21" viewBox="0 0 11 21" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.522217 11.336L5.47155 20.004L10.4209 11.336H0.522217Z" fill="#40A52B" />
+                                                <path d="M10.4206 9.51245L5.47131 0.844452L0.521973 9.51245H10.4206Z" fill="#6F7072" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <select id="opcionais" class="  form-select form-select-sm rounded-start-5 w-auto  flex-grow-0 "
+                                            aria-label=".form-select-lg example">
+                                        <option selected>Selecione</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
                                 </div>
-                                <select id="opcionais" class="  form-select form-select-sm rounded-start-5 w-auto  flex-grow-0 "
-                                        aria-label=".form-select-lg example">
-                                    <option selected>Selecione</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </th>
-                        <th scope="col" class="bg-transparent ">
-                            <div class=" bg-white  rounded-top-4 w-100 d-flex justify-content-center p-3 position-relative "
-                                 data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="iCarros"
-                                 data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
-                                <img src="images/icarros.svg" alt="" srcset="">
-                                <div class="bottom-btns d-flex  rounded-circle bg-white p-2 position-absolute ">
-                                    <a href="#" class="btn p-1 ">
-                                        <i class="bi bi-eraser-fill text-danger "></i>
-                                    </a>
-                                    <a href="#" class="btn p-1 ">
-                                        <img src="images/arrow.svg" alt="" srcset="">
-                                    </a>
+                            </th>
+                            <th scope="col" class="bg-transparent ">
+                                <div class=" bg-white  rounded-top-4 w-100 d-flex justify-content-center p-3 position-relative "
+                                     data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="iCarros"
+                                     data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
+                                    <img src="images/icarros.svg" alt="" srcset="">
+                                    <div class="bottom-btns d-flex  rounded-circle bg-white p-2 position-absolute ">
+                                        <a href="#" class="btn p-1 ">
+                                            <i class="bi bi-eraser-fill text-danger "></i>
+                                        </a>
+                                        <a href="#" class="btn p-1 ">
+                                            <img src="images/arrow.svg" alt="" srcset="">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </th>
-                        <th scope="col" class="bg-transparent ">
-                            <div class=" bg-white  rounded-top-4 w-100 d-flex justify-content-center p-3 position-relative "
-                                 data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
-                                 data-bs-content="WebMotors" data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
-                                <img src="images/webmotos.svg" alt="" srcset="">
-                                <div class="bottom-btns d-flex  rounded-circle bg-white p-2 position-absolute ">
-                                    <a href="#" class="btn p-1 ">
-                                        <i class="bi bi-eraser-fill text-danger "></i>
-                                    </a>
-                                    <a href="#" class="btn p-1 ">
-                                        <img src="images/arrow.svg" alt="" srcset="">
-                                    </a>
+                            </th>
+                            <th scope="col" class="bg-transparent ">
+                                <div class=" bg-white  rounded-top-4 w-100 d-flex justify-content-center p-3 position-relative "
+                                     data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
+                                     data-bs-content="WebMotors" data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
+                                    <img src="images/webmotos.svg" alt="" srcset="">
+                                    <div class="bottom-btns d-flex  rounded-circle bg-white p-2 position-absolute ">
+                                        <a href="#" class="btn p-1 ">
+                                            <i class="bi bi-eraser-fill text-danger "></i>
+                                        </a>
+                                        <a href="#" class="btn p-1 ">
+                                            <img src="images/arrow.svg" alt="" srcset="">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
-                @foreach (var item in Model)
-                {
+                            </th>
+                        </tr>
+                    </thead>
                     <tbody class="border-white">
+
                         <tr class=" border-bottom ">
                             <td scope="row" style="min-width:2rem;" class="position-relative">
-                                <a href="#"
-                                   class="bg-body-secondary position-absolute text-center text-danger p-1 d-flex align-items-center  "
-                                   style="height: calc(100% - 1rem);">
-                                    <i class="bi bi-trash3-fill"> @Html.ActionLink("", "Delete", new { id = item.VeiculoId })</i>
+                                <a href="#" class="bg-body-secondary position-absolute text-center text-danger p-1 d-flex align-items-center" style="height: calc(100% - 1rem);">
+                                    <i class="bi bi-trash3-fill"></i>
                                 </a>
                             </td>
                             <td class="align-middle " style="max-width: 25vw;">
@@ -249,42 +290,50 @@
                                      style=" min-height: 174px;">
                                     <div class="col col-xl-6 p-3">
                                         <div class="bg-white fw-bold  rounded-2 py-2 px-4 mb-3">
-                                            (@Html.DisplayFor(modelItem => item.Marca) + " " + (@Html.DisplayFor(modelItem => item.Modelo)) |  @Html.DisplayFor(modelItem => item.Ano)
+                                            MARCA MODEL | ANO
                                         </div>
                                         <div class="my-auto ">
                                             <ul class="list-group list-group-flush bg-transparent my-auto ">
                                                 <li class="list-group-item bg-transparent py-0 ">
-                                                    Placa - <span class="text-success "> @Html.DisplayFor(modelItem => item.Placa)</span>
+                                                    Placa - <span class="text-success ">AAA-0102</span>
                                                 </li>
                                                 <li class="list-group-item bg-transparent py-0 ">
-                                                    Km - <span class="text-success "> @Html.DisplayFor(modelItem => item.Km)</span>
+                                                    Km - <span class="text-success ">25.000</span>
                                                 </li>
                                                 <li class="list-group-item bg-transparent py-0 ">
-                                                    Cor - <span class="text-success "> @Html.DisplayFor(modelItem => item.Cor)</span>
+                                                    Cor - <span class="text-success ">Branco</span>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div id="info-car" class="col col-xl-6 pe-0  d-flex flex-column justify-content-end align-items-end">
-                                        <div id="btn-group-edit-car" class="btn-group mb-3 me-3  align-items-center" role="group" aria-label="Basic example">
+                                    <div id="info-car"
+                                         class="col col-xl-6 pe-0  d-flex flex-column justify-content-end align-items-end   ">
+                                        <div id="btn-group-edit-car" class="btn-group mb-3 me-3  align-items-center   " role="group"
+                                             aria-label="Basic example">
                                             <button id="edit-car" type="button" class="btn btn-primary " data-bs-container="body"
                                                     data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Editar veíuculo"
                                                     data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
-                                                <i class="hover"  src="images/pencil-square.svg" alt="" srcset="">
-                                                @Html.ActionLink("", "Edit", new { id = item.VeiculoId })</i>
+                                                <img class="hover"
+                                                     src="images/pencil-square.svg" alt="" srcset=""></i>
                                             </button>
-                                            <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Fotos" data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
+                                            <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-placement="top" data-bs-content="Fotos" data-bs-trigger="hover focus"
+                                                    data-bs-custom-class="custom-popover">
                                                 <img src="images/camera-fill.svg" alt="" srcset="">
                                                 <span class="count-photos text-success small d-flex flex-column  ">08</span>
                                             </button>
-                                            <button type="button" class="btn rounded-end-0 " data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Opcionais" data-bs-trigger=" hover focus" data-bs-custom-class="custom-popover">
+                                            <button type="button" class="btn rounded-end-0 " data-bs-container="body"
+                                                    data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Opcionais"
+                                                    data-bs-trigger=" hover focus" data-bs-custom-class="custom-popover">
                                                 <img src="images/car_optionals.svg" alt="" srcset="">
                                                 <span class="optionals text-success small d-flex flex-column  ">Opcionais</span>
                                             </button>
                                         </div>
-                                        <div id="preco" class="h5 mb-0 text-end  bg-white bg-opacity-75 text-success py-2 px-4 w-100"
-                                                style="-webkit-clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%); clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%); ">
-                                            @Html.DisplayFor(modelItem => item.Preco)
+                                        <div id="preco"
+                                             class="h5 mb-0 text-end  bg-white  bg-opacity-75 text-success py-2 px-4 w-100 dark:bg-dark"
+                                             style="-webkit-clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%); clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+                      ">
+                                            R$103.900,00
                                         </div>
                                         <div class="right-btns d-flex flex-column rounded-circle bg-white p-2 position-absolute">
                                             <a href="#" class="btn p-0 ">
@@ -331,12 +380,14 @@
                                             <label class="form-check-label text-success " for="firstCheckbox">010-008</label>
                                         </div>
                                     </li>
+
                                 </ul>
                             </td>
                         </tr>
+                        
                     </tbody>
-                }
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 </div>
