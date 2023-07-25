@@ -83,7 +83,7 @@ namespace AdsetIntegrador.MVC.Controllers
                         files.Add(foto.FileName);
                     }
                 }
-                veiculo.Foto = files;
+                veiculo.Fotos = files;
 
                 var veiculoDomain = Mapper.Map<VeiculoViewModel, Veiculo>(veiculo);
                 _veiculoAppService.Update(veiculoDomain);
