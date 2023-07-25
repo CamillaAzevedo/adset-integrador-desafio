@@ -24,6 +24,8 @@ namespace AdsetIntegrator.Infra.Data.Contexto
              modelBuilder.Properties()
                  .Where(a => a.Name == a.ReflectedType.Name + "Id")
                  .Configure(a => a.IsKey());
+            modelBuilder.Properties<DateTime>()
+                .Configure(c => c.HasColumnType("datetime2"));
             modelBuilder.Configurations.Add(new VeiculoConfiguration());
             modelBuilder.Configurations.Add(new ItemDeSerieConfiguration());
             modelBuilder.Configurations.Add(new VeiculoItemConfiguration());

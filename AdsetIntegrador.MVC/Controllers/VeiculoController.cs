@@ -58,34 +58,50 @@ namespace AdsetIntegrador.MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(VeiculoViewModel veiculo)
+        public ActionResult Edit(VeiculoViewModel veiculo, List<IFormFile> formFileMultiple)
         {
             if (ModelState.IsValid)
             {
+                List<string> files = new List<string>();
+                
+                if (formFileMultiple.Count > 0)
+                {
+                    foreach (var foto in formFileMultiple)
+                    {
+                        string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/FotosVeiculos");
+
+                        //create folder if not exist
+                        if (!Directory.Exists(path))
+                            Directory.CreateDirectory(path);
+                        string fileNameWithPath = Path.Combine(path, foto.FileName);
+
+                        using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+                        {
+                            foto.CopyTo(stream);
+                        }
+
+                        files.Add(foto.FileName);
+                    }
+                }
+                veiculo.Foto = files;
+
                 var veiculoDomain = Mapper.Map<VeiculoViewModel, Veiculo>(veiculo);
                 _veiculoAppService.Update(veiculoDomain);
 
                 return RedirectToAction("Index");
             }
             return View(veiculo);
-        }
+         
+        
+    }
 
-        public ActionResult Delete(int id)
-        {
-            var veiculo = _veiculoAppService.GetbyId(id);
-            var veiculoViewModel = Mapper.Map<Veiculo, VeiculoViewModel>(veiculo);
-
-            return View(veiculoViewModel);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public JsonResult Delete(int id)
         {
             var veiculo = _veiculoAppService.GetbyId(id);
             _veiculoAppService.Delete(veiculo);
 
-            return RedirectToAction("Index");
+            return Json(new { success = true });
         }
     }
 }

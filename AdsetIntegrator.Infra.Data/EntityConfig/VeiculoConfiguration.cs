@@ -1,10 +1,5 @@
 ﻿using AdsetIntegrator.Domain.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdsetIntegrator.Infra.Data.EntityConfig
 {
@@ -36,8 +31,10 @@ namespace AdsetIntegrator.Infra.Data.EntityConfig
             Property(v => v.Preco)
                .IsRequired();
 
-            Property(v => v.Foto)
-              .HasMaxLength(255);
+            Property(v => v.Foto.FirstOrDefault()).HasMaxLength(255);
+
+            Property(v => v.DataDeCadastro)
+                .HasColumnType("datetime2");
 
         }
     }

@@ -12,6 +12,7 @@
         public decimal Preco { get; set; }
         public virtual IEnumerable<ItemDeSerie> ItensDeSerie { get; set; }
         public string Foto { get; set; }
+        public virtual List<string> Fotos { get; set; }
         public DateTime DataDeCadastro { get; set; }
     }
 }

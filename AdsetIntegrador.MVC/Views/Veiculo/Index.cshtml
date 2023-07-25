@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "Index";
+    var totalDeVeiculos = Model.Count();
+    var totalDeVeiculosComFoto = Model.Where(v => v.Foto != null).Count();
+    var totalDeVeiculosSemFoto = Model.Where(v => v.Foto == null).Count();
 }
 
 <div class="container-fluid p-0">
@@ -11,19 +14,19 @@
                 <div id="btn-group-header" class="btn-group btn-group-lg col-12 col-sm-6 col-lg-6 col-xxl-5 row-cols-4 justify-content-center " role="group" aria-label="Large button group">
                     <a class="btn d-flex flex-grow-0 flex-lg-grow-1  px-2 bar-separator">
                         <div class="wrap-content flex-column align-items-center  pe-4">
-                            <div class="main-text text-secondary   "> 100 veículos </div>
+                            <div class="main-text text-secondary   "> @totalDeVeiculos veículos</div>
                             <div class="fs-6 text-primary ">Total</div>
                         </div>
                     </a>
                     <a class="btn d-flex flex-grow-0 flex-lg-grow-1   px-2 bar-separator pr-2 ">
                         <div class="wrap-content flex-column align-items-center  pe-4">
-                            <div class="main-text text-secondary   "> 100 veículos </div>
+                            <div class="main-text text-secondary   "> @totalDeVeiculosComFoto veículos </div>
                             <div class="fs-6 text-success ">Com foto</div>
                         </div>
                     </a>
                     <a class="btn d-flex flex-grow-0 flex-lg-grow-1   px-2">
                         <div class="wrap-content flex-column align-items-center ">
-                            <div class="main-text text-secondary   "> 100 veículos </div>
+                            <div class="main-text text-secondary   "> @totalDeVeiculosSemFoto veículos </div>
                             <div class="fs-6 text-danger ">Sem foto</div>
                         </div>
                     </a>
@@ -275,116 +278,116 @@
                         </tr>
                     </thead>
                     <tbody class="border-white">
-
-                        <tr class=" border-bottom ">
-                            <td scope="row" style="min-width:2rem;" class="position-relative">
-                                <a href="#" class="bg-body-secondary position-absolute text-center text-danger p-1 d-flex align-items-center" style="height: calc(100% - 1rem);">
-                                    <i class="bi bi-trash3-fill"></i>
-                                </a>
-                            </td>
-                            <td class="align-middle " style="max-width: 25vw;">
-                                <img class="img-fluid  " src="images/foto-carro.jpg" alt="" srcset="">
-                            </td>
-                            <td class="col-7 position-relative">
-                                <div class="col d-flex flex-column flex-xl-row  bg-body-secondary w-100 h-100 align-items-stretch"
-                                     style=" min-height: 174px;">
-                                    <div class="col col-xl-6 p-3">
-                                        <div class="bg-white fw-bold  rounded-2 py-2 px-4 mb-3">
-                                            MARCA MODEL | ANO
+                        @foreach(var item in Model)
+                        {
+                            <tr class="border-bottom">
+                                <td scope="row" class="position-relative" style="min-width:2rem;">
+                                    <button onclick="excluiVeiculo(@Html.DisplayFor(modelItem => item.VeiculoId));" class="bg-body-secondary position-absolute text-center text-danger p-1 d-flex align-items-center" style="height: calc(100% - 1rem);">
+                                        <i class="bi bi-trash3-fill"></i>
+                                    </button>
+                                </td>
+                                <td class="align-middle " style="max-width: 25vw;">
+                                    <img class="img-fluid  " src="~/images/foto-carro.jpg" alt="" srcset="">
+                                </td>
+                                <td class="col-7 position-relative">
+                                    <div class="col d-flex flex-column flex-xl-row  bg-body-secondary w-100 h-100 align-items-stretch"
+                                         style=" min-height: 174px;">
+                                        <div class="col col-xl-6 p-3">
+                                            <div class="bg-white fw-bold  rounded-2 py-2 px-4 mb-3">
+                                                @Html.DisplayFor(modelItem => item.Marca)  @Html.DisplayFor(modelItem => item.Modelo) |  @Html.DisplayFor(modelItem => item.Ano)
+                                            </div>
+                                            <div class="my-auto ">
+                                                <ul class="list-group list-group-flush bg-transparent my-auto ">
+                                                    <li class="list-group-item bg-transparent py-0 ">
+                                                        Placa - <span class="text-success ">@Html.DisplayFor(modelItem => item.Placa)</span>
+                                                    </li>
+                                                    <li class="list-group-item bg-transparent py-0 ">
+                                                        Km - <span class="text-success ">@Html.DisplayFor(modelItem => item.Km)</span>
+                                                    </li>
+                                                    <li class="list-group-item bg-transparent py-0 ">
+                                                        Cor - <span class="text-success ">@Html.DisplayFor(modelItem => item.Cor)</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="my-auto ">
-                                            <ul class="list-group list-group-flush bg-transparent my-auto ">
-                                                <li class="list-group-item bg-transparent py-0 ">
-                                                    Placa - <span class="text-success ">AAA-0102</span>
-                                                </li>
-                                                <li class="list-group-item bg-transparent py-0 ">
-                                                    Km - <span class="text-success ">25.000</span>
-                                                </li>
-                                                <li class="list-group-item bg-transparent py-0 ">
-                                                    Cor - <span class="text-success ">Branco</span>
-                                                </li>
-                                            </ul>
+                                        <div id="info-car"
+                                            class="col col-xl-6 pe-0  d-flex flex-column justify-content-end align-items-end   ">
+                                            <div id="btn-group-edit-car" class="btn-group mb-3 me-3  align-items-center   " role="group"
+                                                    aria-label="Basic example">
+                                                <a href="veiculo/Edit/@Html.DisplayFor(modelItem => item.VeiculoId)" id="edit-car" type="button" class="btn btn-primary " data-bs-container="body"
+                                                        data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Editar veíuculo"
+                                                        data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
+                                                    <img class="hover" src="~/images/pencil-square.svg" alt="" srcset="">
+                                                </a>
+                                                <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover"
+                                                        data-bs-placement="top" data-bs-content="Fotos" data-bs-trigger="hover focus"
+                                                        data-bs-custom-class="custom-popover">
+                                                    <img src="~/images/camera-fill.svg" alt="" srcset="">
+                                                    <span class="count-photos text-success small d-flex flex-column  ">08</span>
+                                                </button>
+                                                <button type="button" class="btn rounded-end-0 " data-bs-container="body"
+                                                        data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Opcionais"
+                                                        data-bs-trigger=" hover focus" data-bs-custom-class="custom-popover">
+                                                    <img src="~/images/car_optionals.svg" alt="" srcset="">
+                                                    <span class="optionals text-success small d-flex flex-column  ">Opcionais</span>
+                                                </button>
+                                            </div>
+                                            <div id="preco"
+                                                 class="h5 mb-0 text-end  bg-white  bg-opacity-75 text-success py-2 px-4 w-100 dark:bg-dark"
+                                                 style="-webkit-clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%); clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+                          ">
+                                                R$ @Html.DisplayFor(modelItem => item.Preco)
+                                            </div>
+                                            <div class="right-btns d-flex flex-column rounded-circle bg-white p-2 position-absolute">
+                                                <a href="#" class="btn p-0 ">
+                                                    <i class="bi bi-eraser-fill text-danger "></i>
+                                                </a>
+                                                <a href="#" class="btn p-0 ">
+                                                    <img src="~/images/arrow.svg" alt="" srcset="">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div id="info-car"
-                                         class="col col-xl-6 pe-0  d-flex flex-column justify-content-end align-items-end   ">
-                                        <div id="btn-group-edit-car" class="btn-group mb-3 me-3  align-items-center   " role="group"
-                                             aria-label="Basic example">
-                                            <button id="edit-car" type="button" class="btn btn-primary " data-bs-container="body"
-                                                    data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Editar veíuculo"
-                                                    data-bs-trigger="hover focus" data-bs-custom-class="custom-popover">
-                                                <img class="hover"
-                                                     src="images/pencil-square.svg" alt="" srcset=""></i>
-                                            </button>
-                                            <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover"
-                                                    data-bs-placement="top" data-bs-content="Fotos" data-bs-trigger="hover focus"
-                                                    data-bs-custom-class="custom-popover">
-                                                <img src="images/camera-fill.svg" alt="" srcset="">
-                                                <span class="count-photos text-success small d-flex flex-column  ">08</span>
-                                            </button>
-                                            <button type="button" class="btn rounded-end-0 " data-bs-container="body"
-                                                    data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Opcionais"
-                                                    data-bs-trigger=" hover focus" data-bs-custom-class="custom-popover">
-                                                <img src="images/car_optionals.svg" alt="" srcset="">
-                                                <span class="optionals text-success small d-flex flex-column  ">Opcionais</span>
-                                            </button>
-                                        </div>
-                                        <div id="preco"
-                                             class="h5 mb-0 text-end  bg-white  bg-opacity-75 text-success py-2 px-4 w-100 dark:bg-dark"
-                                             style="-webkit-clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%); clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
-                      ">
-                                            R$103.900,00
-                                        </div>
-                                        <div class="right-btns d-flex flex-column rounded-circle bg-white p-2 position-absolute">
-                                            <a href="#" class="btn p-0 ">
-                                                <i class="bi bi-eraser-fill text-danger "></i>
-                                            </a>
-                                            <a href="#" class="btn p-0 ">
-                                                <img src="images/arrow.svg" alt="" srcset="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle ">
-                                <ul class="list-group ps-3 border-end justify-content-center  " style="min-width: 9rem">
-                                    <li class="list-group-item border-0 p-1 ">
-                                        <small class="text-body-secondary ">Diamante Feirão</small>
-                                        <div class="d-flex">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                            <label class="form-check-label text-success " for="firstCheckbox">010-008</label>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-0 p-1 ">
-                                        <small class="text-body-secondary ">Diamante</small>
-                                        <div class="d-flex">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                                            <label class="form-check-label text-success " for="secondCheckbox">030-025</label>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-0 p-1 ">
-                                        <small class="text-body-secondary ">Platinum</small>
-                                        <div class="d-flex">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                            <label class="form-check-label text-success " for="thirdCheckbox">040-010</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </td>
-                            <td class="align-middle ">
-                                <ul class="list-group ps-3 border-end justify-content-center" style="min-width: 9rem">
-                                    <li class="list-group-item border-0 p-1 ">
-                                        <small class="text-body-secondary ">Diamante Feirão</small>
-                                        <div class="d-flex">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                            <label class="form-check-label text-success " for="firstCheckbox">010-008</label>
-                                        </div>
-                                    </li>
+                                </td>
+                                <td class="align-middle ">
+                                    <ul class="list-group ps-3 border-end justify-content-center  " style="min-width: 9rem">
+                                        <li class="list-group-item border-0 p-1 ">
+                                            <small class="text-body-secondary ">Diamante Feirão</small>
+                                            <div class="d-flex">
+                                                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                                                <label class="form-check-label text-success " for="firstCheckbox">010-008</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-0 p-1 ">
+                                            <small class="text-body-secondary ">Diamante</small>
+                                            <div class="d-flex">
+                                                <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                                                <label class="form-check-label text-success " for="secondCheckbox">030-025</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-0 p-1 ">
+                                            <small class="text-body-secondary ">Platinum</small>
+                                            <div class="d-flex">
+                                                <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                                                <label class="form-check-label text-success " for="thirdCheckbox">040-010</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="align-middle ">
+                                    <ul class="list-group ps-3 border-end justify-content-center" style="min-width: 9rem">
+                                        <li class="list-group-item border-0 p-1 ">
+                                            <small class="text-body-secondary ">Diamante Feirão</small>
+                                            <div class="d-flex">
+                                                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                                                <label class="form-check-label text-success " for="firstCheckbox">010-008</label>
+                                            </div>
+                                        </li>
 
-                                </ul>
-                            </td>
-                        </tr>
-                        
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
